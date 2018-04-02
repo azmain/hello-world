@@ -1,0 +1,11 @@
+=>
+Was having problem to push to a existing github repository,
+- git push origin master -> fatal error
+By following the instructions solved it,
+- git fetch origin master:tmp
+- git rebase tmp
+- git push origin HEAD:master
+- git branch -D tmp
+
+=>
+
