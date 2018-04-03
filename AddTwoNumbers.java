@@ -19,6 +19,11 @@ public class AddTwoNumbers {
 	public LinkedList<Integer> add(LinkedList<Integer> l1,LinkedList<Integer> l2) {
 		LinkedList<Integer> result = new LinkedList<Integer>();
 		int carry = 0;
+		/*
+		 * if l1 & l2 lengths are same
+		 * l1 = 1,2,3
+		 * l2 = 4,5,6
+		 */
 		while(l1.iterator().hasNext() && l2.iterator().hasNext()) {
 //			System.out.println(l1.pop());
 //			System.out.println(l2.pop());
@@ -29,6 +34,11 @@ public class AddTwoNumbers {
 			result.add(x);
 			//System.out.println(x);
 		}
+		/*
+		 * if l1 length is more
+		 * l1 = 1,2
+		 * l2 = 9
+		 */
 		while(l1.iterator().hasNext()) {
 			int num = (int)l1.pop();
 			int x = num % 10;
@@ -36,6 +46,11 @@ public class AddTwoNumbers {
 			carry = num/10;
 			result.add(x);
 		}
+		/*
+		 * if l2 length is more
+		 * l1 = 9
+		 * l2 = 12
+		 */
 		while(l2.iterator().hasNext()) {
 			int num = (int)l2.pop();
 			int x = num % 10;
@@ -43,6 +58,11 @@ public class AddTwoNumbers {
 			carry = num/10;
 			result.add(x);
 		}
+		/*
+		 * if carry remains
+		 * l1 = 2
+		 * l2 = 9
+		 */
 		if(carry != 0) {
 			result.add(carry);
 		}
@@ -62,6 +82,9 @@ public class AddTwoNumbers {
 		 */
 //		class Solution {
 //		    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+				/*
+				 * dummy node is for accessing the head of result node
+				 */
 //		        ListNode dummy = new ListNode(0);
 //		        ListNode result = dummy;
 //		        int carry = 0;
@@ -69,9 +92,9 @@ public class AddTwoNumbers {
 //		            int x = l1.val + l2.val + carry;
 //		            int num = x % 10;
 //		            carry = x / 10;
-//		            ListNode newNode = new ListNode(num);
-//		            result.next = newNode;
-//		            result = newNode;
+//		            ListNode newNode = new ListNode(num);  // create the newnode
+//		            result.next = newNode;  // link the newnode to the result link
+//		            result = newNode;  // move the head to the newnode
 //		            l1 = l1.next;
 //		            l2 = l2.next;
 //		        }
